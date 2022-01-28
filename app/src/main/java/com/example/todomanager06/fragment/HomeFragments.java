@@ -54,8 +54,7 @@ public class HomeFragments extends Fragment {
 
     private void initAdapter() {
         App.getApp().getDb().taskDao().getData().observe(getViewLifecycleOwner(), listTask -> {
-            homeAdapter = new HomeAdapter(listTask);
-            binding.homeRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+           HomeAdapter homeAdapter = new HomeAdapter(listTask);
             binding.homeRecycler.setAdapter(homeAdapter);
         });
     }
